@@ -22,4 +22,4 @@ Calculates net pay by subtracting Tax from Basic Pay
 ![Sample Output](sample.jpg)
 ***
 ## Conslusion
-Documented and written  by [Titus Kiplaga](https://www.linkedin.com/in/titus-kiplagat-5146ba210/)
+Documented and written  by [Titus Kiplagat](https://www.linkedin.com/in/titus-kiplagat-5146ba210/)
