@@ -12,4 +12,10 @@ This is a sample program to calculate the net pay for a given employee and displ
 #### Functions
 `taxPaid(bsPay);` <br/>
 Calculates tax paid depending with the basic pay table above. <br/>
-``
+`basicPay();` <br/>
+Calculates basic pay by the hours worked and rate per hour. <br/>
+`employeeInput();` <br/>
+Takes user Employee and stores it in the structre <br/>
+`calcNetPay();` <br/>
+Calculates net pay by subtracting Tax from Basic Pay
+## Sample output
