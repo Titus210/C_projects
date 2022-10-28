@@ -19,3 +19,7 @@ Takes user Employee and stores it in the structre <br/>
 `calcNetPay();` <br/>
 Calculates net pay by subtracting Tax from Basic Pay
 ## Sample output
+![Sample Output](sample.jpg)
+***
+## Conslusion
+Documented by 
