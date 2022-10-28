@@ -1,14 +1,17 @@
 #include <stdio.h>
-
+/*-----------------------------------*/
 //  Function declaration
-float taxPaid();
-void displayPay();
+/*-----------------------------------*/
+float taxPaid(bsPay);
 void basicPay();
 void employeeInput();
+float calcNetPay();
 
 
-
+/*-----------------------------------*/
 // creating a employee structure template
+/*-----------------------------------*/
+
 struct employee
 {
     char firstname[64];
@@ -17,23 +20,47 @@ struct employee
     float ratePerHour;
 } emp;
 
-// Global Variables
+/*-----------------------------------*/
+//  Global Variables
+/*-----------------------------------*/
+
 float tax, netPay;
 int bsPay;
 
 
-//  Main function
+
+/*-----------------------------------*/
+//           Main function
+/*-----------------------------------*/
 int main()
 {
-    bsPay = 2324000;
-    tax = 10.00;
 
+    employeeInput();
 
-       tax = 0.2 * bsPay;
-         printf("%.2f", tax);
+    dispOutput();
+
 }
 
-//  Users Input
+
+/*-----------------------------------*/
+//     Output
+/*-----------------------------------*/
+
+void dispOutput(){
+    printf("\n\n\n%s %s Details: ",emp.firstname ,emp.lastname);
+    printf("\nBasic Pay: %d", bsPay);
+    printf("\nTax: %.2f", tax);
+    printf("\nNet Pay: %.2f", netPay);
+
+
+}
+
+
+
+/*-----------------------------------*/
+//      Users Input
+/*-----------------------------------*/
+
 void employeeInput()
 {
     printf("Enter First Name: ");
@@ -49,59 +76,81 @@ void employeeInput()
     printf("Enter Rate per Hour: ");
     scanf("%f", &emp.ratePerHour);
 
+    // Call basic pay function
+    basicPay();
 }
 
-
+/*-----------------------------------*/
 //  Calculating Basic Pay
+/*-----------------------------------*/
+
 void basicPay()
 {
+
     bsPay = (emp.hoursWorked * emp.ratePerHour);
+
+    //call tax
+    taxPaid(bsPay);
     return bsPay;
 }
 
-
+/*-----------------------------------*/
 // Calculate Tax
+/*-----------------------------------*/
 
 float taxPaid(bsPay)
 {
-    bsPay = 2324000;
+
 
 
     if (bsPay > 50000)
     {
-       tax = (20/100) * bsPay;
-         printf("%.2f", tax);
+        tax = 0.2 * bsPay;
+
     }
     else if (bsPay >= 20000 && bsPay <= 50000)
     {
-        tax = (10/100) * bsPay;
-          printf("%.2f", tax);
+        tax = 0.1 * bsPay;
+
     }
     else
     {
-         tax = 0.00;
-           printf("%.2f", tax);
+        tax = 0.00;
+
     }
 
+    //call net pay
+    calcNetPay();
+
+    return tax;
+}
+
+
+/*-----------------------------------*/
+// Calculate Net Pay
+/*-----------------------------------*/
+
+float calcNetPay(){
+     return netPay = bsPay - tax;
 
 }
 
 
-    // Using Switch
-//    switch(bsPay)
-//    {
-//    case (bsPay > 50000):
-//        tax = (20/100) * bsPay;
-//    case (bsPay  >= 20000 && bsPay <= 50000):
-//        tax = (20/100) * bsPay;
-//    default:
-//        tax = 0.00;
-//    }
+
+//  Using Switch
+/*
+
+    switch(bsPay)
+    {
+    case (bsPay > 50000):
+        tax = (20/100) * bsPay;
+    case (bsPay  >= 20000 && bsPay <= 50000):
+        tax = (20/100) * bsPay;
+    default:
+        tax = 0.00;
+    }
+
+*/
 
 
 
-void displayPay(bsPay,tax)
-{
-    netPay = bsPay - tax;
-    printf("%.2f", netPay);
-}
