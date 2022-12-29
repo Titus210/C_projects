@@ -17,4 +17,4 @@ __explanation__: <br>
 integer `x` has a value of `10` and stored in memory address `1000`, pointer `ptr` is a pointer to the memory address of `x` which holds the value `1000`. <br>
 __NOTE__:
 The pointer is allocated its separate memory and has a different memory address. i.e: <br> 
-`int ptr;` can be allocated a memory address `1000` but stores the address of `x`  that is `1000`.
+`int ptr;` can be allocated a memory address `2000` but stores the address of `x`  that is `1000`.
