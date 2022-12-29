@@ -3,7 +3,10 @@
 This is a sample program to calculate the net pay for a given employee and display 
 ### How its calculated
 > basic pay = hours worked by employee * rate per hour
+
+
 |  Basic Pay | Tax |
+| ----------- | ----------- |
 |Over 50000|20 % of basic pay|
 |Between 20000 and 50000|10 % of basic pay|
 |Below 20000|No discount|
@@ -22,4 +25,4 @@ Calculates net pay by subtracting Tax from Basic Pay
 ![Sample Output](sample.jpg)
 ***
 ## Conslusion
-Documented and written  by [Titus Kiplaga](https://www.linkedin.com/in/titus-kiplagat-5146ba210/)
+Documented and written  by [Titus Kiplagat](https://www.linkedin.com/in/titus-kiplagat-5146ba210/)
