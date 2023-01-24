@@ -91,7 +91,7 @@ information about different entities <br/>
        
 ```
 The structure above has the size
->  sizeof(std) = (int + char * 10 + int)  * 2
+>  sizeof(std) = (int + char * 10 + int)  * 2 ==
 (4 + 10 + 2) * 2 = 28
 
 
