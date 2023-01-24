@@ -29,8 +29,13 @@ We use the `.`(dot) operator to access name fields within structure variable <br
 ```
     John.name = "John"
 ```
+The second method is using structure pointer operator `->`
+```
+    John.age -> 24;
+```
+
 ### Initialized members of a structure
-We can initialize mwmbers of structure by enclosing fields in a curly braces<br/>
+We can initialize members of structure by enclosing fields in a curly braces<br/>
 ```
     struct Employee Doe ={"Doe", 21, 8.8}, Mary = {"Mary", 22, 8.1}
 ```
@@ -47,11 +52,47 @@ We can assign a structure to another
     struct Employee Doe;
     Doe = John  // values of doe assigned to John
 ```
-### Modify VAlues in structure
+
+### Modify Values in structure
 We can modify value in structure using  `.` dot syntax. <br/>
 `strcpy()` function is usefull in  modyfying string value.
 ```
     strcpy(John.name, "JOHN VIE")
     John.age = 34;
 ```
+
+### typedef
+This is used to redefine name already in existing variable <br/>
+__syntax__
+> typedef <existng name> <alias name>
+
+```
+    typedef Employee Employee_Details;
+
+    Employee_Details John, Greiner;
+```
+This method can be very important when created a structure that initially had no name.
+```
+    typedef struct Employee_Salary
+```
+After that we can now access items inside the `Employee-Salary` structure
+
+### Array Of Structures
+This is collection of multiple structures variables where each variable contains
+information about different entities <br/>
+```
+    struct Student{
+        int regNumber;
+        char Name[10];
+        int year_of_registration;
+        }
+
+        struct Student std[3];
+       
+```
+The structure above has the size
+>  sizeof(std) = (int + char * 10 + int)  * 2
+(4 + 10 + 2) * 2 = 28
+
+
 
