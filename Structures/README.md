@@ -23,8 +23,15 @@ We can give additional variables of same type
 ```
 We can create a structure without giving a name but additional variables can not be created
 or passed to it. <br/>
+```
+    Struct {
+        int id;
+        int salary;
+        float salary;
+    }
+```
 
-### Accesing members of a structure
+### Accessing members of a structure
 We use the `.`(dot) operator to access name fields within structure variable <br/>
 ```
     John.name = "John"
@@ -64,7 +71,7 @@ We can modify value in structure using  `.` dot syntax. <br/>
 ### typedef
 This is used to redefine name already in existing variable <br/>
 __syntax__
-> typedef <existng name> <alias name>
+> typedef <existing name> <alias name>
 
 ```
     typedef Employee Employee_Details;
@@ -88,11 +95,50 @@ information about different entities <br/>
         }
 
         struct Student std[3];
-       
 ```
 The structure above has the size
 >  sizeof(std) = (int + char * 10 + int)  * 2 ==
 (4 + 10 + 2) * 2 = 28
 
 
+### Nested Structure
+This is where we nest several structures within each other. It can be __previously__ defined structure or __newly__ defined one
+1. Separate nesting
+```
+    Struct School{
+        int po_Box;
+        char name[30];
 
+        struct Student John;
+        Struct Employee Principal;
+    }
+```
+We have created  a structure School that nests the structures `Student` and `Employee`. <br/>
+To initialize items in the nested structure, we can use the method below using two (dot operator).
+```
+    School.John.regNumber = 30;
+    School.Principal.salary = 10000;
+```
+2. Embeding nesting
+```
+    Struct School{
+        int po_Box;
+        char name[30];
+
+        struct Student John;
+        Struct Employee Principal;
+
+        struct Student{
+        int regNumber;
+        char Name[10];
+        int year_of_registration;
+        }John;
+        }School_1;
+```
+Accessing the items is the same with each one differently accesed by its name
+```
+    School.John.regNumber = 30;
+    School_1.po_Box = 12441;
+```
+
+### Passing structure to a function
