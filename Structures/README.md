@@ -82,7 +82,7 @@ This method can be very important when created a structure that initially had no
 ```
     typedef struct Employee_Salary
 ```
-After that we can now access items inside the `Employee-Salary` structure
+After that we can now access items inside the `Employee_Salary` structure
 
 ### Array Of Structures
 This is collection of multiple structures variables where each variable contains
